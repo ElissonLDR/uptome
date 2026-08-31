@@ -22,7 +22,10 @@ export function LandingPage() {
       className="min-h-screen bg-cover bg-fixed bg-center bg-no-repeat text-foreground antialiased"
       style={{ backgroundImage: `url(${backgroundLandingPage})` }}
     >
-      <section id="hero" className="scroll-mt-8 pb-[88px] pt-12 md:pt-16">
+      <section
+        id="hero"
+        className="scroll-mt-8 pb-[88px] pt-12 md:flex md:min-h-[650px] md:items-center md:pt-16"
+      >
         <Container>
           <div className="grid items-center gap-10 lg:grid-cols-[7fr_3fr] lg:gap-8">
             <div>
@@ -30,9 +33,13 @@ export function LandingPage() {
                 FEITO PARA QUEM LIDERA O RH
               </span>
               <h1 className="mb-[22px] font-display text-[clamp(2rem,5vw,3.25rem)] font-bold uppercase leading-[1.05] tracking-[0.3px]">
-                O processo de feedback você já tem.
+                O processo de feedback
                 <br />
-                O que falta é o <span className="text-primary">líder executar.</span>
+                você já tem.
+                <br />
+                <span className="mt-2 inline-block rounded-md bg-primary px-3 py-1.5 text-primary-foreground">
+                  O que falta é o líder executar
+                </span>
               </h1>
               <Lede>
                 A UPtoME é a IA que treina o líder no momento em que ele mais precisa — por áudio, no
