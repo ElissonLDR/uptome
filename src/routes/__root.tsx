@@ -10,6 +10,7 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
+import logotipoUptome from "@/assets/logotipo-uptome-branco.png";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
 function NotFoundComponent() {
@@ -77,23 +78,34 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "UPtoME" },
-      { name: "description", content: "UPtoME — desenvolvimento de pessoas e potencial humano." },
+      { title: "UPtoME — Treine seus líderes em tempo real" },
+      {
+        name: "description",
+        content:
+          "UPtoME: IA que treina o líder em tempo real e ajuda a mitigar o risco psicossocial da NR-1. Feedback por áudio, sem burocracia.",
+      },
       { name: "author", content: "UPtoME" },
-      { property: "og:title", content: "UPtoME" },
+      { property: "og:title", content: "UPtoME — Treine seus líderes em tempo real" },
       {
         property: "og:description",
-        content: "UPtoME — desenvolvimento de pessoas e potencial humano.",
+        content:
+          "UPtoME: IA que treina o líder em tempo real e ajuda a mitigar o risco psicossocial da NR-1. Feedback por áudio, sem burocracia.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap",
+      },
       {
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", type: "image/png", href: "/favicon.png" },
+      { rel: "icon", type: "image/png", href: logotipoUptome },
     ],
   }),
   shellComponent: RootShell,
@@ -104,7 +116,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="pt-BR">
       <head>
         <HeadContent />
       </head>

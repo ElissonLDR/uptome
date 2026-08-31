@@ -1,15 +1,21 @@
 import { createFileRoute } from "@tanstack/react-router";
-import logo from "@/assets/uptome-logo.png.asset.json";
+
+import { LandingPage } from "@/components/landing/LandingPage";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "UPtoME" },
-      { name: "description", content: "UPtoME — desenvolvimento de pessoas e potencial humano." },
-      { property: "og:title", content: "UPtoME" },
+      { title: "UPtoME — Treine seus líderes em tempo real" },
+      {
+        name: "description",
+        content:
+          "UPtoME: IA que treina o líder em tempo real e ajuda a mitigar o risco psicossocial da NR-1. Feedback por áudio, sem burocracia. Faça o diagnóstico grátis.",
+      },
+      { property: "og:title", content: "UPtoME — Treine seus líderes em tempo real" },
       {
         property: "og:description",
-        content: "UPtoME — desenvolvimento de pessoas e potencial humano.",
+        content:
+          "UPtoME: IA que treina o líder em tempo real e ajuda a mitigar o risco psicossocial da NR-1. Feedback por áudio, sem burocracia.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -19,16 +25,5 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
-  return (
-    <main className="relative flex min-h-screen items-center justify-center overflow-hidden bg-background px-6">
-      <div className="pointer-events-none absolute -left-32 -top-32 h-96 w-96 rounded-full bg-primary/10 blur-3xl" />
-      <div className="pointer-events-none absolute -bottom-40 -right-24 h-[28rem] w-[28rem] rounded-full bg-accent/10 blur-3xl" />
-      <h1 className="sr-only">UPtoME</h1>
-      <img
-        src={logo.url}
-        alt="UPtoME"
-        className="relative w-[min(78vw,30rem)] animate-in fade-in zoom-in-95 duration-700"
-      />
-    </main>
-  );
+  return <LandingPage />;
 }
