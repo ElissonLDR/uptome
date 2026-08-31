@@ -1,24 +1,34 @@
 import { createFileRoute } from "@tanstack/react-router";
+import logo from "@/assets/uptome-logo.png.asset.json";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "UPtoME" },
+      { name: "description", content: "UPtoME — desenvolvimento de pessoas e potencial humano." },
+      { property: "og:title", content: "UPtoME" },
+      {
+        property: "og:description",
+        content: "UPtoME — desenvolvimento de pessoas e potencial humano.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
+    <main className="relative flex min-h-screen items-center justify-center overflow-hidden bg-background px-6">
+      <div className="pointer-events-none absolute -left-32 -top-32 h-96 w-96 rounded-full bg-primary/10 blur-3xl" />
+      <div className="pointer-events-none absolute -bottom-40 -right-24 h-[28rem] w-[28rem] rounded-full bg-accent/10 blur-3xl" />
+      <h1 className="sr-only">UPtoME</h1>
       <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
+        src={logo.url}
+        alt="UPtoME"
+        className="relative w-[min(78vw,30rem)] animate-in fade-in zoom-in-95 duration-700"
       />
-    </div>
+    </main>
   );
 }
